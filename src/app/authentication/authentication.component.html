@@ -1,0 +1,89 @@
+<form
+  #authenticationForm="ngForm"
+  novalidate
+  (ngSubmit)="onSubmit(authenticationForm)"
+>
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Authentication</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input
+              matInput
+              placeholder="Private key"
+              id="privateKey"
+              name="privateKey"
+              required
+              minlength="42"
+              [(ngModel)]="authentication.privateKey"
+              #privateKey="ngModel"
+            />
+
+            <mat-error
+              *ngIf="
+                privateKey.invalid && (privateKey.dirty || privateKey.touched)
+              "
+            >
+              <div *ngIf="privateKey.errors?.required">
+                privateKey is required.
+              </div>
+              <div *ngIf="privateKey.errors?.minlength">
+                privateKey must be at least 42 characters long.
+              </div>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <!--  -->
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input
+              matInput
+              placeholder="Public key"
+              id="publicKey"
+              name="publicKey"
+              required
+              disabled
+              minlength="42"
+              [(ngModel)]="authentication.publicKey"
+              #publicKey="ngModel"
+            />
+
+            <mat-error
+              *ngIf="
+                publicKey.invalid && (publicKey.dirty || publicKey.touched)
+              "
+            >
+              <div *ngIf="publicKey.errors?.required">
+                publicKey is required.
+              </div>
+              <div *ngIf="publicKey.errors?.minlength">
+                publicKey must be at least 42 characters long.
+              </div>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <!--  -->
+    </mat-card-content>
+    <div class="row">
+      <div class="col">
+        <mat-card-actions>
+          <button
+            mat-raised-button
+            color="primary"
+            type="submit"
+            class="full-width"
+            [disabled]="authenticationForm.invalid"
+          >
+            Submit
+          </button>
+        </mat-card-actions>
+      </div>
+    </div>
+  </mat-card>
+</form>
