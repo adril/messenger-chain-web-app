@@ -29,7 +29,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { ToastrModule } from "ngx-toastr";
 import { AuthenticationComponent } from "./authentication/authentication.component";
-import { MinePendingMessagesComponent } from './mine-pending-messages/mine-pending-messages.component';
+import { MinePendingMessagesComponent } from "./mine-pending-messages/mine-pending-messages.component";
 
 @NgModule({
   declarations: [

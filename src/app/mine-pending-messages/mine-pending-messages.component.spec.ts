@@ -1,16 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { MinePendingMessagesComponent } from './mine-pending-messages.component';
+import { MinePendingMessagesComponent } from "./mine-pending-messages.component";
 
-describe('MinePendingMessagesComponent', () => {
+describe("MinePendingMessagesComponent", () => {
   let component: MinePendingMessagesComponent;
   let fixture: ComponentFixture<MinePendingMessagesComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MinePendingMessagesComponent ]
-    })
-    .compileComponents();
+      declarations: [MinePendingMessagesComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('MinePendingMessagesComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

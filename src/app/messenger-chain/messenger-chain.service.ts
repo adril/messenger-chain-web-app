@@ -73,7 +73,10 @@ export class MessengerChainService {
     };
 
     return this.http
-      .post<void>(`${this.messengerChainUrl}/mine-pending-messages`, httpOptions)
+      .post<void>(
+        `${this.messengerChainUrl}/mine-pending-messages`,
+        httpOptions
+      )
       .pipe(catchError(this.handleError));
   }
 
